@@ -1,0 +1,7 @@
+const numbs = document.querySelectorAll('.number')
+const operators = document.querySelectorAll('.operator')
+const clear = document.querySelector('.clear')
+const del = document.querySelector('.delete')
+const equa = document.querySelector('.equality')
+const resultPrev = document.querySelector('.previous-acion')
+const resultAct = document.querySelector('.currant-action')
