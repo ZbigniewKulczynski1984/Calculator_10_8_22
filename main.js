@@ -44,5 +44,8 @@ switch (operation) {
         break
         default:
             return
+}
 
-    }
+currentAction = action
+operation = undefined
+previousAction = ''
