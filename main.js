@@ -19,3 +19,12 @@ const calculate = () => {
 const previous = parseFloat(previousAction)
 const current = parseFloat(currentAction)
 
+if(isNaN(previous) || isNaN(current)) {
+    return
+}
+
+switch (operation) {
+    case '+';
+    action = previous + current
+    brak
+}
