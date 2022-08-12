@@ -24,7 +24,10 @@ if(isNaN(previous) || isNaN(current)) {
 }
 
 switch (operation) {
-    case '+';
+    case '+':
     action = previous + current
-    brak
+    break
+    case '-':
+        action = previous - current
+        break
 }
