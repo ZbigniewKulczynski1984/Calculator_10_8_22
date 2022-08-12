@@ -36,4 +36,13 @@ switch (operation) {
     case '/':
         action = previous / current
         break
-}
+    case '√':
+        action = Math.exp(previous, 1/ current)
+        break
+    case 'log':
+        action = Math.log(previous) / Math.log(current)
+        break
+        default:
+            return
+
+    }
