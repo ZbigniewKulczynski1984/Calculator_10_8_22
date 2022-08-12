@@ -33,4 +33,7 @@ switch (operation) {
     case '*':
         action = previous * current
         break
+    case '/':
+        action = previous / current
+        break
 }
