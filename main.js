@@ -68,8 +68,12 @@ const choseOperation = (operator) => {
 
 const addNumber = (number) => {
     if (number === '•') {
+        if(currentAction.includes('.')) {
         return
     }
     number = '.'
  }
 
+ currentAction = currentAction.toString() + number.toString()
+
+}
