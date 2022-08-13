@@ -49,3 +49,31 @@ switch (operation) {
 currentAction = action
 operation = undefined
 previousAction = ''
+
+const choseOperation = (operator) => {
+    if(currentAction === '') {
+        return
+    }
+    if(previousAction !== '') {
+        const previous = resultPrev.innerText
+        if(currentAction.toString() === '0' && previous[previous.length -1] === '÷'){
+            clearResult()
+        }
+        calculate()
+    }
+    operation = operator
+    previousAction = currentAction
+    currentAction = ''
+}
+
+const addNumber = (number) => {
+    if (number === '•') {
+        if(currentAction.includes('.')) {
+        return
+    }
+    number = '.'
+ }
+
+ currentAction = currentAction.toString() + number.toString()
+
+}
