@@ -61,6 +61,15 @@ const choseOperation = (operator) => {
         }
         calculate()
     }
-    
+    operation = operator
+    previousAction = currentAction
+    currentAction = ''
 }
+
+const addNumber = (number) => {
+    if (number === '•') {
+        return
+    }
+    number = '.'
+ }
 
