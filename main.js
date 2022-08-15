@@ -114,3 +114,8 @@ delete.addEventListener('click', () => {
     deleteNumber()
     updateResult()
 })
+
+clear.addEventListener('click', () => {
+    clearResult()
+    updateResult()
+})
