@@ -75,5 +75,18 @@ const addNumber = (number) => {
  }
 
  currentAction = currentAction.toString() + number.toString()
+}
 
+const removeNumber = () => {
+    currentAction = currentAction.toString().slice(0,-1)
+}
+
+const updateResult = () => {
+    resultCurrent.innerText = currentAction //sprawdzic nazwę zmiennej
+
+    if(operation != null) {
+        resultPrev.innerText = previousAction + operation
+    } else {
+        resultPrev.innerText = ''
+    }
 }
