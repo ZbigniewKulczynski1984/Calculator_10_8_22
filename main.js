@@ -103,3 +103,9 @@ number.forEach ((number) => {  // sprawdzic czy to liczba poj czy mnoga
         updateResult()
     })
 })
+
+
+equality.addEventListener('click', () => {
+    calculate()
+    updateResult()
+})
