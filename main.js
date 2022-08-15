@@ -109,3 +109,8 @@ equality.addEventListener('click', () => {
     calculate()
     updateResult()
 })
+
+delete.addEventListener('click', () => {
+    deleteNumber()
+    updateResult()
+})
