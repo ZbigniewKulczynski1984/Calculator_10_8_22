@@ -90,3 +90,9 @@ const updateResult = () => {
         resultPrev.innerText = ''
     }
 }
+
+const clearResult = () => {
+    currentAction = ''
+    operation = undefined
+    previousAction
+}
