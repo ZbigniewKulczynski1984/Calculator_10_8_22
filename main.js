@@ -1,10 +1,10 @@
-const numbs = document.querySelectorAll('.number')
-const operators = document.querySelectorAll('.operator')
+const number = document.querySelectorAll('.number')
+const operator = document.querySelectorAll('.operator')
 const clear = document.querySelector('.clear')
 const del = document.querySelector('.delete')
 const equal = document.querySelector('.equality')
 const resultPrev = document.querySelector('.previous-acion')
-const resultAct = document.querySelector('.currant-action')
+const resultCur = document.querySelector('.currant-action')
 
 let currentAction = ''
 let operation = undefined
@@ -20,7 +20,7 @@ const previous = parseFloat(previousAction)
 const current = parseFloat(currentAction)
 
 if(isNaN(previous) || isNaN(current)) {
-    return
+    // return
 }
 
 switch (operation) {
@@ -30,11 +30,21 @@ switch (operation) {
     case '-':
         action = previous - current
         break
-    case '*':
+    case '×':
         action = previous * current
         break
-    case '/':
+    case '÷':
+        if(current === 0) {
+            clearResult()
+            return
+        }
         action = previous / current
+        break
+    case '^':
+        action = Math.exp(previous, current)
+        break
+    case '%':
+        action = previous / 100 * current
         break
     case '√':
         action = Math.exp(previous, 1/ current)
@@ -82,7 +92,7 @@ const removeNumber = () => {
 }
 
 const updateResult = () => {
-    resultCurrent.innerText = currentAction //sprawdzic nazwę zmiennej
+    resultCur.innerText = currentAction 
 
     if(operation != null) {
         resultPrev.innerText = previousAction + operation
@@ -97,7 +107,7 @@ const clearResult = () => {
     previousAction
 }
 
-number.forEach ((number) => {  // sprawdzic czy to liczba poj czy mnoga
+number.forEach ((number) => {  
     number.addEventListener('click', () => {
         addNumber(number.innnerText)
         updateResult()
@@ -105,12 +115,12 @@ number.forEach ((number) => {  // sprawdzic czy to liczba poj czy mnoga
 })
 
 
-equality.addEventListener('click', () => {
+equal.addEventListener('click', () => {
     calculate()
     updateResult()
 })
 
-delete.addEventListener('click', () => {
+del.addEventListener('click', () => {
     deleteNumber()
     updateResult()
 })
