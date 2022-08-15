@@ -96,3 +96,10 @@ const clearResult = () => {
     operation = undefined
     previousAction
 }
+
+number.forEach ((number) => {  // sprawdzic czy to liczba poj czy mnoga
+    number.addEventListener('click', () => {
+        addNumber(number.innnerText)
+        updateResult()
+    })
+})
