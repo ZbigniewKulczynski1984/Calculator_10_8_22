@@ -75,5 +75,47 @@ const addNumber = (number) => {
  }
 
  currentAction = currentAction.toString() + number.toString()
-
 }
+
+const removeNumber = () => {
+    currentAction = currentAction.toString().slice(0,-1)
+}
+
+const updateResult = () => {
+    resultCurrent.innerText = currentAction //sprawdzic nazwę zmiennej
+
+    if(operation != null) {
+        resultPrev.innerText = previousAction + operation
+    } else {
+        resultPrev.innerText = ''
+    }
+}
+
+const clearResult = () => {
+    currentAction = ''
+    operation = undefined
+    previousAction
+}
+
+number.forEach ((number) => {  // sprawdzic czy to liczba poj czy mnoga
+    number.addEventListener('click', () => {
+        addNumber(number.innnerText)
+        updateResult()
+    })
+})
+
+
+equality.addEventListener('click', () => {
+    calculate()
+    updateResult()
+})
+
+delete.addEventListener('click', () => {
+    deleteNumber()
+    updateResult()
+})
+
+clear.addEventListener('click', () => {
+    clearResult()
+    updateResult()
+})
